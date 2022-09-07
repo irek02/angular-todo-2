@@ -18,25 +18,11 @@ export class AppComponent {
   // This show ups with string interpolation in the template
   title = 'Angular Todo App';
 
-  // Todo items selection used with 'get' below 
-  filter: 'all' | 'active' | 'done' = 'all';
-
   // Array contains the todo items and whether they are done or not
   allTodoItems = [
-    { description: "live", done: true },
-    { description: "laugh", done: false },
-    { description: "love", done: false },
+     "live",
+    "laugh",
+    "love",
   ];
-
-  // Retrieves the todo items from the array if the filter is equal to all
-  get todoItems() {
-
-    // If the filter is equal to all, then return all the items 
-    if (this.filter === 'all') {
-      return this.allTodoItems;
-    }
-    // Otherwise return the done items 
-    return this.allTodoItems.filter((todoItem) => this.filter === 'done' ? todoItem.done : !todoItem.done);
-  }
 
 }
