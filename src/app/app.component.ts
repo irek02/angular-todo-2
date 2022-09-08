@@ -30,6 +30,7 @@ export class AppComponent {
     this.allTodoItems.unshift({
       description,
     });
+
     console.log('todo added');
   }
 
