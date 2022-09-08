@@ -18,9 +18,9 @@ export class AppComponent {
   // This show ups with string interpolation in the template
   title = 'Angular Todo App';
 
-  // Array contains the todo items and whether they are done or not
+  // Array contains the todo items
   allTodoItems = [
-     "live",
+    "live",
     "laugh",
     "love",
   ];

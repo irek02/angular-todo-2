@@ -1,2 +1,24 @@
-<h1>{{ title }}</h1>
+<!-- Main header -->
+<section class="heading-section">
+    <h1>{{ title }}</h1>
+</section>
 
+<!-- Todos input -->
+<div class="container">
+    <div class="add-todo">
+        <form>
+            <h2>Add new todo</h2>
+            <input type="text">
+            <button>Add</button>
+        </form>
+    </div>
+</div>
+
+<!-- List of todos -->
+<section>
+    <div class="todo-list">
+        <ul>
+            <li *ngFor="let item of allTodoItems">{{item}}</li>
+          </ul>
+    </div>
+</section>
