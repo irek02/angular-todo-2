@@ -18,24 +18,22 @@ export class AppComponent {
   // This show ups with string interpolation in the template
   title = 'Angular Todo App';
 
-  todos: any;
-
   // Array contains the todo items
   allTodoItems = [
-    { description: "live" },
-    { description: "laugh" },
-    { description: "love" }
+   'live',
+   'laugh',
+   'love'
   ];
 
   // Adds todo with Add button
-  addTodo(description: string) {
-    this.allTodoItems.unshift({
-      description,
-    });
+  addTodo() {
+    this.allTodoItems.unshift();
   }
 
-  deleteTodo(todos: { description: string; }) {
-    this.allTodoItems.splice(this.allTodoItems.indexOf(todos), 1);
+  // Deletes last todo
+  deleteTodo() {
+    const index = this.allTodoItems.indexOf('');
+    this.allTodoItems.splice(index, 1);
   }
 
 }
