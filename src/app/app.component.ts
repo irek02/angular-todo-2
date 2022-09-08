@@ -20,13 +20,17 @@ export class AppComponent {
 
   // Array contains the todo items
   allTodoItems = [
-    "live",
-    "laugh",
-    "love",
+    { description: "live" },
+    { description: "laugh" },
+    { description: "love" }
   ];
 
-  addTodo() {
-    this.allTodoItems.unshift();
+  // Adds todo with Add button
+  addTodo(description: string) {
+    this.allTodoItems.unshift({
+      description,
+    });
+    console.log('todo added');
   }
 
 }
