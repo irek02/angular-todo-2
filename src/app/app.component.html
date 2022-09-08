@@ -23,7 +23,7 @@
         <h2>Todo List</h2>
         <ul>
             <li *ngFor="let item of allTodoItems">{{item.description}}</li>
-            <button type="button" (click)="deleteTodo(allTodoItems)">Delete</button>
+            <button type="button" (click)="deleteTodo(todos)">Delete</button>
           </ul>
     </div>
 </section>

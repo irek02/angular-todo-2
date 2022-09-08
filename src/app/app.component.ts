@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 // @Component decorator specifies metadata about AppComponent
 @Component({
@@ -34,8 +34,8 @@ export class AppComponent {
     });
   }
 
-  deleteTodo(index: any) {
-    this.todos.splice(index, 1);
+  deleteTodo(todos: { description: string; }) {
+    this.allTodoItems.splice(this.allTodoItems.indexOf(todos), 1);
   }
 
 }
