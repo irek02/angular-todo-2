@@ -33,7 +33,7 @@ export class AppComponent {
   // Deletes last todo
   deleteTodo() {
     const index = this.allTodoItems.indexOf('');
-    this.allTodoItems.splice(index, 1);
+    this.allTodoItems.splice(index);
   }
 
 }
