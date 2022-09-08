@@ -25,4 +25,8 @@ export class AppComponent {
     "love",
   ];
 
+  addTodo() {
+    this.allTodoItems.unshift();
+  }
+
 }
