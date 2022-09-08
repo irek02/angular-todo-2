@@ -30,8 +30,10 @@ export class AppComponent {
     this.allTodoItems.unshift({
       description,
     });
+  }
 
-    console.log('todo added');
+  deleteTodo() {
+    console.log('deleted');
   }
 
 }
