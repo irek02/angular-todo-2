@@ -40,12 +40,23 @@ export class AppComponent {
     // If index does not equal the ID, don't return it
     // Returns anything not equal to the ID, which is to remove it
     this.allTodoItems = this.allTodoItems.filter((value, i) => i != id );
-
   }
 
-  // Edits todo item
-  editTodo() {
+  // Edits todo
+  editTodo(id: number){
 
+    // Selects ID of each array item
+    let todo = this.allTodoItems[id];
+
+    // Browser input prompt
+    let editedTodo = prompt("Edit Todo", todo);
+
+    // If the edited todo isn't empty
+    if (editedTodo !== null){
+
+      // Update todo
+      this.allTodoItems[id] = editedTodo;
+    }
   }
 
 }
