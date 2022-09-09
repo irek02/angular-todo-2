@@ -18,6 +18,8 @@ export class AppComponent {
   // This show ups with string interpolation in the template
   title = 'Angular Todo App';
 
+  inputTodo: string = '';
+
   // Array contains the todo items
   allTodoItems = [
    'live',
@@ -27,7 +29,7 @@ export class AppComponent {
 
   // Adds todo with Add button
   addTodo() {
-    this.allTodoItems.unshift();
+    this.allTodoItems.unshift(this.inputTodo);
   }
 
   // Deletes last todo

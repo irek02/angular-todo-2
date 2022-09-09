@@ -4,18 +4,19 @@
 </div>
 
 <!-- Todos input -->
-<div class="container">
-    <div class="add-todo">
-        <form>
-            <h2>Add New Todo</h2>
-            <input 
-                #newItem
-                type="text" 
-                placeholder="Add a todo">
-            <button type="button" (click)="addTodo()">Add</button>
-        </form>
-    </div>
+<div class="add-todo">
+    <form>
+        <h2>Add New Todo</h2>
+        <input 
+            type="text"
+            name="inputTodo" 
+            placeholder="Add a todo..."
+            class="todo-input"
+            [(ngModel)]="inputTodo">
+        <button type="button" (click)="addTodo()">Add</button>
+    </form>
 </div>
+
 
 <!-- List of todos -->
 <div class="todo-list">
