@@ -20,6 +20,9 @@ export class AppComponent {
 
   inputTodo: string = '';
 
+  searchText: any;
+
+
   // Array contains the todo items
   allTodoItems = [
    'live',
@@ -43,7 +46,7 @@ export class AppComponent {
   }
 
   // Edits todo
-  editTodo(id: number){
+  editTodo(id: number) {
 
     // Selects ID of each array item
     let todo = this.allTodoItems[id];
@@ -58,5 +61,11 @@ export class AppComponent {
       this.allTodoItems[id] = editedTodo;
     }
   }
+
+  // toggleCompleted(id: number) {
+  //   this.allTodoItems.map((value, i) => {
+  //     if (i == id) value.completed = !value
+  //   }
+  // )}
 
 }

@@ -22,6 +22,15 @@
 <div class="todo-list">
     <h2>Todo List</h2>
 
+    <div class="search-todos">
+        <input 
+            type="text"
+            name="search"
+            placeholder="Search todo list..."
+            class="form-control"
+            [(ngModel)]="searchText">
+    </div>
+
     <!-- Go through the array -->
     <div class="todo" *ngFor="let item of allTodoItems; let i = index;">
 
