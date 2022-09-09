@@ -30,12 +30,11 @@
             name="search"
             placeholder="Search todo list..."
             class="todo-search"
-            autocomplete="off"
-            [(ngModel)]="searchText">
+            autocomplete="off">
     </div>
 
     <!-- Go through the array -->
-    <div class="todo" *ngFor="let item of allTodoItems | filter: searchText; let i = index;">
+    <div class="todo" *ngFor="let item of allTodoItems; let i = index;">
 
         <!-- ID of each item in the array, 0, 1, 2 -->
         <div class="id">{{ i }}</div>

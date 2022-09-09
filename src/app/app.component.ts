@@ -15,8 +15,10 @@ import { Component} from '@angular/core';
 
 export class AppComponent {
 
-  // This show ups with string interpolation in the template
+  // This shows up with string interpolation in the template
   title = 'Angular Todo App';
+
+  // 
   inputTodo: string = '';
   searchText: any;
 
