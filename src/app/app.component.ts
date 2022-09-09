@@ -61,6 +61,12 @@ export class AppComponent {
     }
   }
 
+  // search(value: string): void {
+  //   this.allTodoItems = this.allTodoItems.filter((val) =>
+  //     val.[].toLowerCase().includes(value)
+  //   );
+  // }
+
   // toggleCompleted(id: number) {
   //   this.allTodoItems.map((value, i) => {
   //     if (i == id) value.completed = !value
