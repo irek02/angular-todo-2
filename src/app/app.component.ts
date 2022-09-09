@@ -21,6 +21,8 @@ export class AppComponent {
   // 
   inputTodo: string = '';
   searchText: any;
+  show:boolean = false;
+  buttonName:any = 'Show';
 
   // Array contains the todo items
   allTodoItems = [
@@ -61,11 +63,21 @@ export class AppComponent {
     }
   }
 
-  // search(value: string): void {
-  //   this.allTodoItems = this.allTodoItems.filter((val) =>
-  //     val.[].toLowerCase().includes(value)
-  //   );
-  // }
+  toggleBtns() {
+    this.show = !this.show;
+
+    // CHANGE THE NAME OF THE BUTTON.
+    if(this.show)  
+      this.buttonName = "Hide";
+    else
+      this.buttonName = "Show";
+  }
+
+  saveTodo(id: number) {
+
+  }
+
+
 
   // toggleCompleted(id: number) {
   //   this.allTodoItems.map((value, i) => {
