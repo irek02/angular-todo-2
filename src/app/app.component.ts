@@ -36,4 +36,9 @@ export class AppComponent {
     this.allTodoItems.splice(index);
   }
 
+  // Edits todo item
+  editTodo() {
+
+  }
+
 }

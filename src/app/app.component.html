@@ -1,7 +1,7 @@
 <!-- Main header -->
-<section class="heading-section">
+<div class="heading-section">
     <h1>{{ title }}</h1>
-</section>
+</div>
 
 <!-- Todos input -->
 <div class="container">
@@ -18,12 +18,19 @@
 </div>
 
 <!-- List of todos -->
-<section>
-    <div class="todo-list">
-        <h2>Todo List</h2>
-        <ul>
-            <li *ngFor="let item of allTodoItems">{{item}}</li>
-            <button type="button" (click)="deleteTodo()">Delete</button>
-          </ul>
+<div class="todo-list">
+    <h2>Todo List</h2>
+
+    <!-- Go through the array -->
+    <div class="todo" *ngFor="let item of allTodoItems; let i = index;">
+
+        <!-- ID of each item in the array, 0, 1, 2 -->
+        <div class="id">{{ i }}</div>
+
+        <!-- Content of each todo item -->
+        <div class="content">{{ item }}</div>
+        
+        <button type="button" (click)="deleteTodo()">Delete</button>
+        <button type="button" (click)="editTodo()">Edit</button>
     </div>
-</section>
+</div>
