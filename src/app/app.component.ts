@@ -31,9 +31,14 @@ export class AppComponent {
   }
 
   // Deletes last todo
-  deleteTodo() {
-    const index = this.allTodoItems.indexOf('');
-    this.allTodoItems.splice(index);
+  // Selects ID number of each array item
+  deleteTodo(id: number) {
+
+    // Filters through array items using value and index
+    // If index does not equal the ID, don't return it
+    // Returns anything not equal to the ID, which is to remove it
+    this.allTodoItems = this.allTodoItems.filter((value, i) => i != id );
+
   }
 
   // Edits todo item
