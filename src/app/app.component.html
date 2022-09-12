@@ -44,11 +44,21 @@
         <!-- Content of each todo item -->
         <div class="content">{{ item }}</div>
 
-        <button type="button" (click)="deleteTodo(i)">Delete</button>
-        <button type="button" (click)="editTodo(i)">Edit</button>
+        <div>
+            <button type="button" (click)="deleteTodo(i)">Delete</button>
+            <button type="button" (click)="editTodo(i)">Edit</button>
+        </div>
 
-        <div *ngIf="show"  (click)="toggleBtns()" >
-            <button type="button" (click)="saveTodo(i)">Save</button>
+        <div>
+            <form>
+                <input 
+                    type="text"
+                    name="inputTodo" 
+                    placeholder="Edit todo..."
+                    class="todo-input"
+                    autocomplete="off">
+                    <button type="button" (click)="saveTodo(i)">Save</button>
+            </form>
         </div>
     </div>
 </div>

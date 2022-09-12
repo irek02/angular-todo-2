@@ -63,15 +63,15 @@ export class AppComponent {
     }
   }
 
-  toggleBtns() {
+  toggleSave() {
     this.show = !this.show;
 
-    // CHANGE THE NAME OF THE BUTTON.
     if(this.show)  
       this.buttonName = "Hide";
     else
       this.buttonName = "Show";
   }
+
 
   saveTodo(id: number) {
 
