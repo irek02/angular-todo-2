@@ -44,21 +44,21 @@
         <!-- Content of each todo item -->
         <div class="content">{{ item }}</div>
 
-        <div>
-            <button type="button" (click)="deleteTodo(i)">Delete</button>
-            <button type="button" (click)="editTodo(i)">Edit</button>
-        </div>
-
-        <div>
             <form>
                 <input 
                     type="text"
                     name="editTodo" 
                     class="todo-edit"
                     autocomplete="off"
-                    [value]="allTodoItems">
+                    [value]="this.allTodoItems[i]">
                 <button type="button" (click)="saveTodo(i)">Save</button>
             </form>
+
+        <div>
+            <button type="button" (click)="deleteTodo(i)">Delete</button>
+            <button type="button" (click)="editTodo(i)">Edit</button>
         </div>
+
     </div>
+
 </div>

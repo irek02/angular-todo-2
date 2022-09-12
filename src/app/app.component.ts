@@ -17,8 +17,10 @@ export class AppComponent {
 
   // This shows up with string interpolation in the template
   title = 'Angular Todo App';
+
   inputTodo: string = '';
   searchText: any;
+  show: boolean = false;
 
   // Array contains the todo items
   allTodoItems = [
@@ -44,7 +46,7 @@ export class AppComponent {
 
   // Acts as a toggle to show the Edit input with Save button and hides the Edit and Delete buttons
   editTodo(id: number) {
-
+    this.show = !this.show;
    
     
   }
@@ -56,15 +58,15 @@ export class AppComponent {
      // Selects ID of each array item
      let todo = this.allTodoItems[id];
 
-  //    // Browser input prompt
-  //    let editedTodo = prompt("Edit Todo", todo);
+     // Browser input prompt
+     let editedTodo = prompt("Edit Todo", todo);
  
-  //    // If the edited todo isn't empty
-  //    if (editedTodo !== null){
+     // If the edited todo isn't empty
+     if (editedTodo !== null){
  
-  //      // Update todo
-  //      this.allTodoItems[id] = editedTodo;
+       // Update todo
+       this.allTodoItems[id] = editedTodo;
 
-  //    }
+     }
   }
 }
