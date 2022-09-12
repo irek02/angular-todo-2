@@ -44,7 +44,7 @@
         <!-- Content of each todo item -->
         <div class="content">{{ item }}</div>
 
-            <form>
+            <form *ngIf="showEdit">
                 <input 
                     type="text"
                     name="editTodo" 
@@ -54,9 +54,9 @@
                 <button type="button" (click)="saveTodo(i)">Save</button>
             </form>
 
-        <div>
+        <div class="buttons" *ngIf="showSave">
             <button type="button" (click)="deleteTodo(i)">Delete</button>
-            <button type="button" (click)="editTodo(i)">Edit</button>
+            <button type="button" (click)="editTodo()">Edit</button>
         </div>
 
     </div>

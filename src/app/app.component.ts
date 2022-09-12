@@ -20,7 +20,8 @@ export class AppComponent {
 
   inputTodo: string = '';
   searchText: any;
-  show: boolean = false;
+  showEdit: boolean = true ; 
+  showSave: boolean = false ; 
 
   // Array contains the todo items
   allTodoItems = [
@@ -45,28 +46,29 @@ export class AppComponent {
   }
 
   // Acts as a toggle to show the Edit input with Save button and hides the Edit and Delete buttons
-  editTodo(id: number) {
-    this.show = !this.show;
-   
-    
+  editTodo() {
+
+    this.showEdit = ! this.showEdit;
   }
 
   // Saves edited todo after user inputs the edit
   // Toggles bak to Edit and Delete buttons when Save is clicked
   saveTodo(id: number) {
+
+    this.showSave = ! this.showSave;
     
-     // Selects ID of each array item
-     let todo = this.allTodoItems[id];
+    //  // Selects ID of each array item
+    //  let todo = this.allTodoItems[id];
 
-     // Browser input prompt
-     let editedTodo = prompt("Edit Todo", todo);
+    //  // Browser input prompt
+    //  let editedTodo = prompt("Edit Todo", todo);
  
-     // If the edited todo isn't empty
-     if (editedTodo !== null){
+    //  // If the edited todo isn't empty
+    //  if (editedTodo !== null){
  
-       // Update todo
-       this.allTodoItems[id] = editedTodo;
+    //    // Update todo
+    //    this.allTodoItems[id] = editedTodo;
 
-     }
+    //  }
   }
 }
