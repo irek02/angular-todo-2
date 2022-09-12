@@ -17,12 +17,8 @@ export class AppComponent {
 
   // This shows up with string interpolation in the template
   title = 'Angular Todo App';
-
-  // 
   inputTodo: string = '';
   searchText: any;
-  show:boolean = false;
-  buttonName:any = 'Show';
 
   // Array contains the todo items
   allTodoItems = [
@@ -46,43 +42,29 @@ export class AppComponent {
     this.allTodoItems = this.allTodoItems.filter((value, i) => i != id );
   }
 
-  // Edits todo
+  // Acts as a toggle to show the Edit input with Save button and hides the Edit and Delete buttons
   editTodo(id: number) {
 
-    // Selects ID of each array item
-    let todo = this.allTodoItems[id];
-
-    // Browser input prompt
-    let editedTodo = prompt("Edit Todo", todo);
-
-    // If the edited todo isn't empty
-    if (editedTodo !== null){
-
-      // Update todo
-      this.allTodoItems[id] = editedTodo;
-    }
+   
+    
   }
 
-  toggleSave() {
-    this.show = !this.show;
-
-    if(this.show)  
-      this.buttonName = "Hide";
-    else
-      this.buttonName = "Show";
-  }
-
-
+  // Saves edited todo after user inputs the edit
+  // Toggles bak to Edit and Delete buttons when Save is clicked
   saveTodo(id: number) {
+    
+     // Selects ID of each array item
+     let todo = this.allTodoItems[id];
 
+  //    // Browser input prompt
+  //    let editedTodo = prompt("Edit Todo", todo);
+ 
+  //    // If the edited todo isn't empty
+  //    if (editedTodo !== null){
+ 
+  //      // Update todo
+  //      this.allTodoItems[id] = editedTodo;
+
+  //    }
   }
-
-
-
-  // toggleCompleted(id: number) {
-  //   this.allTodoItems.map((value, i) => {
-  //     if (i == id) value.completed = !value
-  //   }
-  // )}
-
 }

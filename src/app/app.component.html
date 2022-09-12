@@ -53,11 +53,11 @@
             <form>
                 <input 
                     type="text"
-                    name="inputTodo" 
-                    placeholder="Edit todo..."
-                    class="todo-input"
-                    autocomplete="off">
-                    <button type="button" (click)="saveTodo(i)">Save</button>
+                    name="editTodo" 
+                    class="todo-edit"
+                    autocomplete="off"
+                    [value]="allTodoItems">
+                <button type="button" (click)="saveTodo(i)">Save</button>
             </form>
         </div>
     </div>
