@@ -20,8 +20,8 @@ export class AppComponent {
 
   inputTodo: string = '';
   searchText: any;
-  showEdit: boolean = true ; 
-  showSave: boolean = false ; 
+  showEdit: boolean = false; 
+  showSave: boolean = true; 
 
   // Array contains the todo items
   allTodoItems = [
@@ -46,16 +46,18 @@ export class AppComponent {
   }
 
   // Acts as a toggle to show the Edit input with Save button and hides the Edit and Delete buttons
-  editTodo() {
+  editTodo(id: number) {
 
-    this.showEdit = ! this.showEdit;
+    this.showEdit = true;
+    this.showSave = false;
   }
 
   // Saves edited todo after user inputs the edit
   // Toggles bak to Edit and Delete buttons when Save is clicked
   saveTodo(id: number) {
 
-    this.showSave = ! this.showSave;
+    this.showSave = true;
+    this.showEdit = false;
     
     //  // Selects ID of each array item
     //  let todo = this.allTodoItems[id];

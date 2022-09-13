@@ -42,21 +42,21 @@
         <div class="id">{{ i }}</div>
 
         <!-- Content of each todo item -->
-        <div class="content">{{ item }}</div>
+        <div class="content" *ngIf="showSave">{{ item }}</div>
 
-            <form *ngIf="showEdit">
-                <input 
-                    type="text"
-                    name="editTodo" 
-                    class="todo-edit"
-                    autocomplete="off"
-                    [value]="this.allTodoItems[i]">
-                <button type="button" (click)="saveTodo(i)">Save</button>
-            </form>
+        <form *ngIf="showEdit">
+            <input 
+                type="text"
+                name="editTodo" 
+                class="todo-edit"
+                autocomplete="off"
+                [value]="this.allTodoItems[i]">
+            <button type="button" (click)="saveTodo(i)">Save</button>
+        </form>
 
         <div class="buttons" *ngIf="showSave">
             <button type="button" (click)="deleteTodo(i)">Delete</button>
-            <button type="button" (click)="editTodo()">Edit</button>
+            <button type="button" (click)="editTodo(i)">Edit</button>
         </div>
 
     </div>
