@@ -36,17 +36,19 @@
     </div>
 
     <!-- Go through the array -->
-    <div class="todo" *ngFor="let item of allTodoItems | searchFilter: searchText; let i = index;">
+    <div *ngFor="let item of allTodoItems | searchFilter: searchText; let i = index;">
 
-        <!-- ID of each item in the array, 0, 1, 2 -->
-        <div class="id">{{ i }}</div>
+        <div class="todo" *ngIf="showSave">
+            <!-- ID of each item in the array, 0, 1, 2 -->
+            <div class="id">{{ i }}</div>
 
-        <!-- Content of each todo item -->
-        <div class="content" *ngIf="showSave">{{ item }}</div>
+            <!-- Content of each todo item -->
+            <div class="content">{{ item }}</div>
 
-        <div class="buttons" *ngIf="showSave">
-            <button type="button" (click)="deleteTodo(i)">Delete</button>
-            <button type="button" (click)="editTodo()">Edit</button>
+            <div class="buttons">
+                <button type="button" (click)="deleteTodo(i)">Delete</button>
+                <button type="button" (click)="editTodo()">Edit</button>
+            </div>
         </div>
 
     </div>

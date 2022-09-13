@@ -32,7 +32,9 @@ export class AppComponent {
 
   // Adds todo with Add button
   addTodo() {
+
     this.allTodoItems.unshift(this.inputTodo);
+
   }
 
   // Deletes last todo
@@ -43,6 +45,7 @@ export class AppComponent {
     // If index does not equal the ID, don't return it
     // Returns anything not equal to the ID, which is to remove it
     this.allTodoItems = this.allTodoItems.filter((value, i) => i != id );
+
   }
 
   // Toggle to show the Edit input with Save button and hides the Edit and Delete buttons
@@ -50,6 +53,7 @@ export class AppComponent {
 
     this.showEdit = true;
     this.showSave = false;
+    
   }
 
   // Saves edited todo after user inputs the edit
@@ -61,6 +65,7 @@ export class AppComponent {
     
   }
 
+  // Keeps focus on edit input
   trackByEdit(index: any) {
 
     return index;
