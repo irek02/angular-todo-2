@@ -46,20 +46,20 @@
 
         <div class="buttons" *ngIf="showSave">
             <button type="button" (click)="deleteTodo(i)">Delete</button>
-            <button type="button" (click)="editTodo(i)">Edit</button>
+            <button type="button" (click)="editTodo()">Edit</button>
         </div>
 
     </div>
 
     <div *ngIf="showEdit">
-        <form *ngFor="let item of allTodoItems let i = index;">
+        <form *ngFor="let item of allTodoItems let i = index; trackBy:trackByEdit">
             <input 
                 type="text"
                 name="editTodo" 
                 class="todo-edit"
                 autocomplete="off"
                 [(ngModel)]="this.allTodoItems[i]">
-            <button type="button" (click)="saveTodo(i)">Save</button>
+            <button type="button" (click)="saveTodo()">Save</button>
         </form>
     </div>
 

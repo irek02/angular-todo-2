@@ -45,8 +45,8 @@ export class AppComponent {
     this.allTodoItems = this.allTodoItems.filter((value, i) => i != id );
   }
 
-  // Acts as a toggle to show the Edit input with Save button and hides the Edit and Delete buttons
-  editTodo(id: number) {
+  // Toggle to show the Edit input with Save button and hides the Edit and Delete buttons
+  editTodo() {
 
     this.showEdit = true;
     this.showSave = false;
@@ -54,13 +54,17 @@ export class AppComponent {
 
   // Saves edited todo after user inputs the edit
   // Toggles back to Edit and Delete buttons when Save is clicked
-  saveTodo(id: number) {
+  saveTodo() {
 
     this.showSave = true;
     this.showEdit = false;
     
-    // // Selects ID of each array item
-    // let todo = this.allTodoItems[id];
-
   }
+
+  trackByEdit(index: any) {
+
+    return index;
+
+ }
+
 }
