@@ -53,7 +53,7 @@ export class AppComponent {
 
     this.showEdit = true;
     this.showSave = false;
-    
+
   }
 
   // Saves edited todo after user inputs the edit
@@ -70,6 +70,6 @@ export class AppComponent {
 
     return index;
 
- }
+  }
 
 }

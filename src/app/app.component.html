@@ -5,7 +5,7 @@
 
 <!-- Todos input -->
 <div class="add-todo text-center">
-    <form>
+    <form name="newTodo">
         <h2>Add New Todo</h2>
         <input 
             type="text"
@@ -13,7 +13,8 @@
             placeholder="Add a todo..."
             class="todo-input"
             autocomplete="off"
-            [(ngModel)]="inputTodo">
+            [(ngModel)]="inputTodo"
+            (keyup.enter)="addTodo()">
         <button type="button" (click)="addTodo()">Add</button>
     </form>
 </div>
@@ -54,7 +55,7 @@
     </div>
 
     <div *ngIf="showEdit">
-        <form *ngFor="let item of allTodoItems let i = index; trackBy:trackByEdit">
+        <form *ngFor="let item of allTodoItems; let i = index; trackBy:trackByEdit">
             <input 
                 type="text"
                 name="editTodo" 
