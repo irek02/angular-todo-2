@@ -48,23 +48,6 @@ export class AppComponent {
 
   }
 
-  // Toggle to show the Edit input with Save button and hides the Edit and Delete buttons
-  editTodo() {
-
-    this.showEdit = true;
-    this.showSave = false;
-
-  }
-
-  // Saves edited todo after user inputs the edit
-  // Toggles back to Edit and Delete buttons when Save is clicked
-  saveTodo() {
-
-    this.showSave = true;
-    this.showEdit = false;
-    
-  }
-
   // Keeps focus on edit input
   trackByEdit(index: any) {
 

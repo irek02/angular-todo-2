@@ -44,26 +44,13 @@
             <div class="id">{{ i }}</div>
 
             <!-- Content of each todo item -->
-            <div class="content">{{ item }}</div>
+            <div contenteditable="true" #x (input)="item.title = x.innerText" class="content">{{ item }}</div>
 
             <div class="buttons">
                 <button type="button" (click)="deleteTodo(i)">Delete</button>
-                <button type="button" (click)="editTodo()">Edit</button>
             </div>
         </div>
 
-    </div>
-
-    <div *ngIf="showEdit">
-        <form *ngFor="let item of allTodoItems; let i = index; trackBy:trackByEdit">
-            <input 
-                type="text"
-                name="editTodo" 
-                class="todo-edit"
-                autocomplete="off"
-                [(ngModel)]="this.allTodoItems[i]">
-            <button type="button" (click)="saveTodo()">Save</button>
-        </form>
     </div>
 
 </div>
