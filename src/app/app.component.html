@@ -44,6 +44,8 @@
             <div class="id">{{ i }}</div>
 
             <!-- Content of each todo item -->
+            <!-- Content editable on click -->
+            <!-- Sets variable on the element with #x and on event input, Gets value from innerText -->
             <div contenteditable="true" #x (input)="item.title = x.innerText" class="content">{{ item }}</div>
 
             <div class="buttons">
