@@ -42,20 +42,13 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Angular Todo App');
   });
 
-  it('should render title', () => {
+  // verify new todo gets added to the list
+  it('should add new todo', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('angular-todo-2 app is running!');
-  });
-
-  // verify new todo gets added to the list
-  // it('should add new todo', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.nativeElement as HTMLElement;
    
-  // });
+  });
 
 
 });
