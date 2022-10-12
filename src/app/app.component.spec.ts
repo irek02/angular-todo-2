@@ -43,12 +43,11 @@ describe('AppComponent', () => {
   });
 
   // verify new todo gets added to the list
-  it('should add new todo', () => {
+  it('should add and display new todo', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-   
+    expect(compiled.querySelectorAll('.allTodoItems')).toBeTruthy;
   });
-
 
 });
