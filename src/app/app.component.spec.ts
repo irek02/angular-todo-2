@@ -47,7 +47,12 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
+
+    // user enters item in inputTodo
+    // item displays in allTodoItems
+
     expect(compiled.querySelectorAll('.allTodoItems')).toBeTruthy;
+    expect(compiled.querySelectorAll('.allTodoItems').nativeElement.children[1].textContent).toContain('');
   });
 
 });
