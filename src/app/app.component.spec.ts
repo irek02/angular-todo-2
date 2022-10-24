@@ -1,4 +1,6 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { SearchFilterPipe } from './search-filter.pipe';
@@ -17,6 +19,11 @@ describe('AppComponent', () => {
         AppComponent,
         SearchFilterPipe
       ],
+      // Allows any property on any element
+      // Ignore the errors related to any unknown elements or properties in a template
+      schemas: [
+        NO_ERRORS_SCHEMA
+      ],
     // Compiles component’s resources like the template, styles etc.  
     }).compileComponents();
   });
@@ -26,6 +33,7 @@ describe('AppComponent', () => {
     // Fixture is a way of fixing the state of a component and modelling it in a browser environment
     // Fixture is a wrapper around an instance of a component
     // Have access to a component instance and template
+    // You must tell the TestBed to perform data binding by calling fixture.detectChanges().
     const fixture = TestBed.createComponent(AppComponent);
     // componentInstance is the instance of the root component class
     const app = fixture.componentInstance;
@@ -42,17 +50,39 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Angular Todo App');
   });
 
-  // verify new todo gets added to the list
-  it('should add and display new todo', () => {
+  it('should display todo list', async () => {
+
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
 
-    // user enters item in inputTodo
-    // item displays in allTodoItems
+    expect(compiled.querySelectorAll('.todo').length > 0).toBe(true);
 
-    expect(compiled.querySelectorAll('.allTodoItems')).toBeTruthy;
-    expect(compiled.querySelectorAll('.allTodoItems').nativeElement.children[1].textContent).toContain('');
+    const newTodo =  fixture.debugElement.query(By.css('.todo-input'));
+    newTodo.nativeElement.value = 'learn';
+    newTodo.nativeElement.dispatchEvent(new Event('input'));
+
+    expect(newTodo.nativeElement.value).toContain('learn');
+
   });
+
+  it('should add new todo to input', async () => {
+
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+
+    const newTodo =  fixture.debugElement.query(By.css('.todo-input'));
+    newTodo.nativeElement.value = 'learn';
+    // Dispatch an input event
+    newTodo.nativeElement.dispatchEvent(new Event('input'));
+
+    expect(newTodo.nativeElement.value).toContain('learn');
+
+  });
+
+  // delete todo assert that it's gone
+    // assert specific todo is present (a default one), query love todo by it's content - assert its truthy
+    // delete it
+    // assert that its no longer truthy 
 
 });
