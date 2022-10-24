@@ -73,16 +73,30 @@ describe('AppComponent', () => {
 
     const newTodo =  fixture.debugElement.query(By.css('.todo-input'));
     newTodo.nativeElement.value = 'learn';
+
     // Dispatch an input event
     newTodo.nativeElement.dispatchEvent(new Event('input'));
 
     expect(newTodo.nativeElement.value).toContain('learn');
 
   });
+    
+  it('should delete todo', async () => {
 
-  // delete todo assert that it's gone
-    // assert specific todo is present (a default one), query love todo by it's content - assert its truthy
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    // assert specific todo is present (a default one)
+    expect(compiled.querySelectorAll('.id')[1]).toBeTruthy;
+
     // delete it
-    // assert that its no longer truthy 
+    
+
+    // assert that its no longer truthy
+    // expect(compiled.querySelectorAll('.id')[1]).toBeFalsy; 
+
+
+  });
 
 });
