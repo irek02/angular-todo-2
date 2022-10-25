@@ -87,13 +87,15 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
 
-    // assert specific todo is present (a default one)
+    // Assert specific todo is present
     expect(compiled.querySelectorAll('.id')[1]).toBeTruthy;
 
-    // delete it
+    // Delete it
+    
+    AppComponent.deleteTodo(1);
     
 
-    // assert that its no longer truthy
+    // Assert that its no longer truthy
     // expect(compiled.querySelectorAll('.id')[1]).toBeFalsy; 
 
 
