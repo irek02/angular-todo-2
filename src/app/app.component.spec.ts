@@ -58,12 +58,6 @@ describe('AppComponent', () => {
 
     expect(compiled.querySelectorAll('.todo').length > 0).toBe(true);
 
-    const newTodo =  fixture.debugElement.query(By.css('.todo-input'));
-    newTodo.nativeElement.value = 'learn';
-    newTodo.nativeElement.dispatchEvent(new Event('input'));
-
-    expect(newTodo.nativeElement.value).toContain('learn');
-
   });
 
   it('should add new todo to input', async () => {
@@ -91,8 +85,8 @@ describe('AppComponent', () => {
     expect(compiled.querySelectorAll('.id')[1]).toBeTruthy;
 
     // Delete it
-    
-    AppComponent.deleteTodo(1);
+    const newTodo = {id: 1};
+    AppComponent.deleteTodo(newTodo);
     
 
     // Assert that its no longer truthy
