@@ -82,17 +82,20 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
 
     // Assert specific todo is present
-    expect(compiled.querySelectorAll('.id')[1]).toBeTruthy;
+    expect(compiled.innerHTML.includes('laugh')).toBe(true);
+
+    console.log(compiled.innerHTML);
 
     // Delete it
-    const newTodo = {id: 1};
-    AppComponent.deleteTodo(newTodo);
+    // use click as the user would
+    fixture.componentInstance.deleteTodo(1);
+    fixture.detectChanges();
     
-
     // Assert that its no longer truthy
-    // expect(compiled.querySelectorAll('.id')[1]).toBeFalsy; 
+    expect(compiled.innerHTML.includes('laugh')).toBe(false);
 
 
   });
 
 });
+

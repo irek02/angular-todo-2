@@ -46,6 +46,8 @@ export class AppComponent {
     // Returns anything not equal to the ID, which is to remove it
     this.allTodoItems = this.allTodoItems.filter((value, i) => i != id );
 
+    console.log(this.allTodoItems);
+
   }
 
   // Keeps focus on edit input
