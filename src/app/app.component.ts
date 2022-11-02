@@ -1,8 +1,9 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 // @Component decorator specifies metadata about AppComponent
 @Component({
-  // Name of css selector that's used in the template 
+  // Name of css selector that's used in the template
   // In index.html body tag,Angular CLI added <app-root></app-root> when generating application
   selector: 'app-root',
 
@@ -13,15 +14,15 @@ import { Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   // This shows up with string interpolation in the template
   title = 'Angular Todo App';
 
   inputTodo: string = '';
   searchText: any;
-  showEdit: boolean = false; 
-  showSave: boolean = true; 
+  showEdit: boolean = false;
+  showSave: boolean = true;
 
   // Array contains the todo items
   allTodoItems = [
@@ -29,6 +30,16 @@ export class AppComponent {
    'laugh',
    'love'
   ];
+
+  constructor(
+    public httpClient: HttpClient,
+  ) {}
+
+  ngOnInit() {
+
+    this.httpClient.get('http://localhost:3000/todos').subscribe(r => console.log(r));
+
+  }
 
   // Adds todo with Add button
   addTodo() {
